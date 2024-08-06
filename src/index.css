@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .max-container {
+    max-width: 989px; /* Container width adjusted */
+    margin: 0 auto;  /* Centering the container */
+  }
+
+  .input {
+    @apply flex-1 w-full text-base leading-normal text-slate-gray pl-5 p-5 outline-none border border-slate-gray rounded-full;
+  }
+}
+
+@layer utilities {
+  .padding {
+    @apply px-8 py-12; /* Adjusted padding for a 989px screen */
+  }
+
+  .padding-x {
+    @apply px-8; /* Horizontal padding */
+  }
+
+  .padding-y {
+    @apply py-12; /* Vertical padding */
+  }
+
+  .padding-l {
+    @apply pl-8; /* Left padding */
+  }
+
+  .padding-r {
+    @apply pr-8; /* Right padding */
+  }
+
+  .padding-t {
+    @apply pt-12; /* Top padding */
+  }
+
+  .padding-b {
+    @apply pb-12; /* Bottom padding */
+  }
+
+  .info-text {
+    @apply font-montserrat text-slate-gray text-base leading-6; /* Font size and line height adjusted */
+  }
+  .underline-link {
+    position: relative;
+    text-decoration: none;
+    color: #4a4a4a; /* Slate gray color */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.125rem; /* Text size equivalent to text-lg */
+    display: inline-block;
+}
+
+.underline-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Underline thickness */
+    background-color: #4a4a4a; /* Slate gray color */
+    transition: width 0.3s ease-in-out; /* Animation duration and easing */
+}
+
+.underline-link:hover::before {
+    width: 100%;
+}
+
+}
