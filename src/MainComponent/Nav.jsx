@@ -34,7 +34,7 @@ const Nav = () => {
       <div
         className={`fixed top-0 right-0 h-full bg-white w-1/2 transform ${
           isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
-        } transition-transform duration-300 ease-in-out z-20`}
+        } transition-transform duration-300 ease-in-out z-30`}
       >
         <div className="flex flex-col items-start p-4">
           <button onClick={toggleSidebar} className="self-end mb-4">Close</button>
