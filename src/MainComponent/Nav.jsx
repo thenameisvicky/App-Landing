@@ -32,7 +32,7 @@ const Nav = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full bg-black text-white w-1/2 transform ${
+        className={`fixed top-0 right-0 h-full bg-black  w-1/2 transform ${
           isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
         } transition-transform duration-300 ease-in-out z-30`}
       >
@@ -41,7 +41,7 @@ const Nav = () => {
           {navLinks.map((item) => (
             <a
               key={item.label}
-              className="text-slate-gray font-montserrat leading-normal text-lg underline-link py-2"
+              className="text-white font-montserrat leading-normal text-lg underline-link py-2"
               href={item.href}
               onClick={handleLinkClick}
             >
