@@ -30,18 +30,26 @@ const Nav = () => {
         </div>
       </nav>
 
+      {/* Overlay */}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black opacity-50 z-30"
+          onClick={toggleSidebar}
+        ></div>
+      )}
+
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full bg-black  w-1/2 transform ${
+        className={`fixed top-0 right-0 h-full bg-white w-1/2 transform ${
           isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
-        } transition-transform duration-300 ease-in-out z-30`}
+        } transition-transform duration-300 ease-in-out z-40`}
       >
         <div className="flex flex-col items-start p-4">
           <button onClick={toggleSidebar} className="self-end mb-4">Close</button>
           {navLinks.map((item) => (
             <a
               key={item.label}
-              className="text-white font-montserrat leading-normal text-lg underline-link py-2"
+              className="text-slate-gray font-montserrat leading-normal text-lg underline-link py-2"
               href={item.href}
               onClick={handleLinkClick}
             >
