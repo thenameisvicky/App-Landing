@@ -13,8 +13,8 @@
 
 @layer components {
   .max-container {
-    max-width: 989px; /* Container width adjusted */
-    margin: 0 auto;  /* Centering the container */
+    max-width: 1280px; /* Updated container width for better responsiveness */
+    margin: 0 auto;
   }
 
   .input {
@@ -24,58 +24,89 @@
 
 @layer utilities {
   .padding {
-    @apply px-8 py-12; /* Adjusted padding for a 989px screen */
+    @apply px-4 py-8 md:px-8 md:py-12;
   }
 
   .padding-x {
-    @apply px-8; /* Horizontal padding */
+    @apply px-4 md:px-8;
   }
 
   .padding-y {
-    @apply py-12; /* Vertical padding */
+    @apply py-8 md:py-12;
   }
 
   .padding-l {
-    @apply pl-8; /* Left padding */
+    @apply pl-4 md:pl-8;
   }
 
   .padding-r {
-    @apply pr-8; /* Right padding */
+    @apply pr-4 md:pr-8;
   }
 
   .padding-t {
-    @apply pt-12; /* Top padding */
+    @apply pt-8 md:pt-12;
   }
 
   .padding-b {
-    @apply pb-12; /* Bottom padding */
+    @apply pb-8 md:pb-12;
   }
 
   .info-text {
-    @apply font-montserrat text-slate-gray text-base leading-6; /* Font size and line height adjusted */
+    @apply font-montserrat text-slate-gray text-base leading-6;
   }
+
   .underline-link {
     position: relative;
     text-decoration: none;
-    color: #4a4a4a; /* Slate gray color */
+    color: #4a4a4a;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.125rem; /* Text size equivalent to text-lg */
+    font-size: 1.125rem; /* text-lg */
     display: inline-block;
-}
+  }
 
-.underline-link::before {
+  .underline-link::before {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     width: 0;
-    height: 2px; /* Underline thickness */
-    background-color: #4a4a4a; /* Slate gray color */
-    transition: width 0.3s ease-in-out; /* Animation duration and easing */
-}
+    height: 2px;
+    background-color: #4a4a4a;
+    transition: width 0.3s ease-in-out;
+  }
 
-.underline-link:hover::before {
+  .underline-link:hover::before {
     width: 100%;
+  }
 }
 
+/* Custom media queries for better responsiveness */
+@media (max-width: 1024px) {
+  .padding-x {
+    @apply px-4;
+  }
+  .padding-y {
+    @apply py-8;
+  }
+  .padding-t {
+    @apply pt-8;
+  }
+  .padding-b {
+    @apply pb-8;
+  }
+}
+
+@media (max-width: 768px) {
+  .padding-x {
+    @apply px-2;
+  }
+  .padding-y {
+    @apply py-4;
+  }
+  .padding-t {
+    @apply pt-4;
+  }
+  .padding-b {
+    @apply pb-4;
+  }
 }
